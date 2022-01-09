@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{url('/img/favicon.png')}}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="Home of  Music & Entertainment, Lively Music to Lighten Up your Mood and Make your Day | Promote your Music on Musicreel.com.ng">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>MusicReel | Home of Music & Entertainment</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
      <!-- Fonts Awesome-->
@@ -21,14 +24,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- ShareThis -->
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5cd57de93255ff0012e3812e&product=sticky-share-buttons' async='async'></script>
     
 </head>
 <body>
-    <div id="app">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0"
+    nonce="35G8J3j6"></script>
+    <div id="app" style="">
         <nav id="my_nav" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <span><i class="far fa-blog"></i> Music_Reel</span>
+                <a class="navbar-brand m" href="{{ url('/') }}">
+                 <img class="logo" src="{{url('/img/logo.png')}}" alt="Musicreel.com"/>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -37,7 +46,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
+                        <li class="nav-item ">
                             <a class="nav-link" href="/posts"> <i class="fa fa-music"></i> Music Blog</a>
                         </li>
                         <li class="nav-item">
@@ -49,6 +58,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/ad"> <i class="fa fa-registered"></i> Adverts Placement</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact"> <i class="fa fa-phone"></i> Contact Us</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -59,8 +71,8 @@
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li class="nav-item" >
+                                    <a class="nav-link disabled" href="{{ route('register') }}">{{ __(' ') }}</a>
                                 </li>
                             @endif
                         @else
@@ -70,11 +82,12 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a style="color: #000;" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a class="dropdown-item" style="color: #000" href="/home">Dashboard</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -86,15 +99,17 @@
                 </div>
             </div>
         </nav>
-        <main class="">
+        <main class="container"> <br>
+            @include('layouts.messages')
             @yield('content')
-        </main>
+           
+         </main>
         <footer class="mt-5">
             <div class="container">
                   <div class="row">
                       <div class="col-md-10 offset-2">
                           <div class="row">
-                              <div class="col-md-4">
+                              <div id="footer-box" class="col-md-4">
                                   <h3 class="footer-header">Hot Categories</h3>
                                   <p class="footer-links">
                                       <h5><a href="#">MR Podcast</a></h5> <br>
@@ -103,16 +118,16 @@
                                       <h5><a href="#">Talk Zone</a></h5> <br>
                                   </p>
                               </div>
-                              <div class="col-md-4">
+                              <div id="footer-box" class="col-md-4">
                                   <h3 class="footer-header">Information</h3>
                                   <p class="footer-links">
                                       <h5><a href="#">About Us</a></h5> <br>
                                       <h5><a href="#">Advertise on MR</a></h5> <br>
-                                      <h5><a href="#">Promote Music/Video</a></h5> <br>
-                                      <h5><a href="#">Contact Us</a></h5> <br>
+                                      <h5><a href="/contact">Promote Music/Video</a></h5> <br>
+                                      <h5><a href="/contact">Contact Us</a></h5> <br>
                                   </p>
                               </div>
-                              <div class="col-md-4">
+                              <div id="footer-box" class="col-md-4">
                                   <h3 class="footer-header">Helpful Links</h3>
                                   <p class="footer-links">
                                       <h5><a href="#">MR Music Promo Packages</a></h5> <br>

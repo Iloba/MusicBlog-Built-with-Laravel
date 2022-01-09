@@ -26,5 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //make string 191 characters
         Schema::defaultStringLength(191);
+
+        
     }
 }

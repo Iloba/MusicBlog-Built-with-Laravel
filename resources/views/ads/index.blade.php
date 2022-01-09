@@ -9,27 +9,30 @@
         </ol>
         <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="{{url('/img/slider1.jpg')}}" alt="musicreel.com.ng">
+            <img class="d-block w-100" src="{{url('/img/7.jpg')}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h1>Music Reel</h1>
-                <h2>Listen to Fresh Naija hits on Music reel
-                </h2>
+                <h1>Lorem ipsum dolor sit.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Quidem voluptate quo excepturi modi praesentium officiis ut.
+                </p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="{{url('/img/slider2.jpg')}}" alt="musicreel.com.ng">
+            <img class="d-block w-100" src="{{url('/img/1.jpg')}}" alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-                <h1>Music Reel</h1>
-                <h2>Listen to Fresh Naija hits on Music reel
-                </h2>
+                <h1>Lorem ipsum dolor sit.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Quidem voluptate quo excepturi modi praesentium officiis ut.
+                </p>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="{{url('/img/slider3.jpg')}}" alt="musicreel.com.ng">
+            <img class="d-block w-100" src="{{url('/img/4.jpg')}}" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
-                <h1>Music Reel</h1>
-                <h2>Listen to Fresh Naija hits on Music reel
-                </h2>
+                <h1>Lorem ipsum dolor sit.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                    Quidem voluptate quo excepturi modi praesentium officiis ut.
+                </p>
             </div>
         </div>
         </div>
@@ -48,57 +51,48 @@
             <div class="col-md-8">
                 <div class="card card-body shadow">
                     <div class=" trending_div">
-                        <h1 class="text-center trending-title">Trending Posts</h1>
+                        <h1 class="text-center trending-title">Trending Ads</h1>
                     </div> <br>
-                    @if (count($posts) > 0)
+                    @if (count($ads) > 0)
                         <div class="row">
-                            @foreach ($posts as $post)
+                            @foreach ($ads as $ad)
                                 <div id="trending" class="col-md-4">
                                     @php
                                        //Manipulate the title to show in url
-                                        $posttitle = str_replace(" ", '-',  $post->title);
+                                        $adtitle = str_replace(" ", '-',  $ad->title);
                                     @endphp
-                                     <a href="/posts/{{$post->id}}-{{$posttitle}}">
-                                        <div class="card  shadow">
-                                        <img src="/storage/cover_images/{{$post->cover_image}}" class="img-fluid trending_images" alt="{{$posttitle}}">
+                                     <a href="/ads/{{$ad->id}}-{{$adtitle}}">
+                                        <div class="card shadow">
+                                            <img src="/storage/advert_images/{{$ad->ad_image}}" class="img-fluid trending_images" alt="{{$adtitle}}">
                                         </div>
                                         <div class="card card-body shadow">
-                                            <p class="text-center"><span class="badge badge-success"> <i class="fa fa-comments"></i>10 views</span></p>
-                                            <h5 class="text-center"><span style="color: green;">[New Music]</span> <br><b>{{$post->title}}</b></h5>
-                                            <p id="posted-on" class="text-center" style="color: green;" >posted on {{$post->created_at}} by {{$post->user->name}} </p>
+                                            <p class="text-center"><span class="badge badge-success"> <i class="fa fa-comments"></i>0 views</span></p>
+                                            <h5 class="text-center"><span style="color: green;">[Check this Out]</span> <br><b>{{$ad->title}}</b></h5>
+                                            <p id="posted-on" class="text-center" style="color: green;" >posted on {{$ad->created_at}} </p>
                                         </div>
                                     </a> <br>
                                 </div> 
-                                
                             @endforeach
                         </div>
-                        {{$posts->links()}}
-                        
+                        {{$ads->links()}}
 
                     @else
-                    <p class="text-center">No Posts Found</p>
+                    <p class="text-center">No Ads Found</p>
 
                     @endif
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="fb-page" 
-
-                        data-href="https://web.facebook.com/musicreel2"
-                        data-width="380" 
-                        data-hide-cover="false"
-                        data-show-facepile="false">
-                    </div>
                     <div class="">
                         <img class="img-fluid contact mx-auto d-block mt-5"  src="{{url('/img/Contact-Us.png')}}" alt=""> <br>
                     </div>
                     <h4 class="pl-4">Stay with Us</h4>
                     <div class="follow-links pl-4">
-                        <a href="https://web.facebook.com/musicreel2" target="_blank"><img class="img-fluid icon" src="{{url('/img/social-facebook-icon.png')}}" alt="Facebook"></a>
-                        <a href="https://www.instagram.com/musicreel3/" target="_blank"><img class="img-fluid icon" src="{{url('/img/instagram.jpg')}}" alt="Insta"></a>
-                        <a href="https://twitter.com/MusicReel1" target="_blank"><img class="img-fluid icon" src="{{url('/img/social-twitter-icon.png')}}" alt="Twitter"></a>
-                        <a href="https://www.youtube.com/channel/UCE45L8yvkbjH-iG9je2csrw/featured?view_as=subscriber" target="_blank"><img class="img-fluid icon" src="{{url('/img/youtube.png')}}" alt="youtube"></a>
+                        <a href="#"><img class="img-fluid icon" src="{{url('/img/social-facebook-icon.png')}}" alt="Facebook"></a>
+                        <a href="#"><img class="img-fluid icon" src="{{url('/img/instagram.jpg')}}" alt="Insta"></a>
+                        <a href="#"><img class="img-fluid icon" src="{{url('/img/social-twitter-icon.png')}}" alt="Twitter"></a>
+                        <a href="#"><img class="img-fluid icon" src="{{url('/img/youtube.png')}}" alt="youtube"></a>
                     </div> <br>
                     <div class="trending_dark">
                          <h2 class="text-center mt-2">Search For Post</h2>
@@ -120,25 +114,25 @@
                    </div>
                    <div class="latest-post">
                     <div class="trending_div">
-                        <h2 class="text-center">Latest Posts</h2>
+                        <h2 class="text-center">Latest Ads</h2>
                    </div>
                    <div class="card card-body">
-                    @if (count($latestposts) > 0)
+                    @if (count($latestads) > 0)
                         <div class="">
-                            @foreach ($latestposts as $latestpost)
+                            @foreach ($latestads as $latestad)
                                 <div id="trending">
                                     @php
                                     //Manipulate the title to show in url
-                                        $posttitle = str_replace(" ", '-',  $latestpost->title);
+                                        $adtitle = str_replace(" ", '-',  $latestad->title);
                                     @endphp
-                                    <a href="/posts/{{$latestpost->id}}-{{$posttitle}}">
+                                    <a href="/ads/{{$latestad->id}}-{{$adtitle}}">
                                         <div class="card shadow">
-                                        <img src="/storage/cover_images/{{$latestpost->cover_image}}" class="img-fluid trending_images" alt="{{$posttitle}}">
+                                        <img src="/storage/advert_images/{{$latestad->ad_image}}" class="img-fluid trending_images" alt="{{$adtitle}}">
                                         </div>
                                         <div class="card card-body">
-                                            <p class="text-center"><span class="badge badge-success"> <i class="fa fa-comments"></i>10 views</span></p>
-                                            <h5 class="text-center"><span style="color: green;">[New Music]</span> <br><b>{{$latestpost->title}}</b></h5>
-                                            <small>posted on {{$latestpost->created_at}} </small>
+                                            <p class="text-center"><span class="badge badge-success"> <i class="fa fa-comments"></i>0 views</span></p>
+                                            <h5 class="text-center"><span style="color: green;">[Check This Out]</span> <br><b>{{$latestad->title}}</b></h5>
+                                            <small>posted on {{$latestad->created_at}} </small>
                                         </div>
                                     </a> <br>
                                 </div> 
@@ -146,7 +140,7 @@
                         </div>
                      @endif
                    </div>
-                   </div>
+            </div>
                 </div>
             </div>
         </div>

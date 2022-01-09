@@ -3765,6 +3765,7 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  margin: 3px;
 }
 
 .nav-link:hover, .nav-link:focus {
@@ -3848,6 +3849,7 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  padding: 20px;
 }
 
 .navbar .container, .navbar .container-fluid, .navbar .container-sm, .navbar .container-md, .navbar .container-lg, .navbar .container-xl {
@@ -3952,6 +3954,7 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
   .navbar-expand-sm .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+    height: auto;
   }
   .navbar-expand-sm .navbar-toggler {
     display: none;
@@ -4126,7 +4129,7 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("/img/menu.svg");
 }
 
 .navbar-light .navbar-text {
@@ -4460,9 +4463,9 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #3490dc;
+  color: #69ca19;
   background-color: #fff;
-  border: 1px solid #dee2e6;
+  border: 1px solid #69ca19
 }
 
 .page-link:hover {
@@ -4493,8 +4496,8 @@ input[type=submit].btn-block, input[type=reset].btn-block, input[type=button].bt
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #3490dc;
-  border-color: #3490dc;
+  background-color: #69ca19;
+  border-color: #69ca19;
 }
 
 .page-item.disabled .page-link {
@@ -4607,7 +4610,7 @@ a.badge-secondary:focus, a.badge-secondary.focus {
 
 .badge-success {
   color: #fff;
-  background-color: #38c172;
+  background-color: #69ca19;
 }
 
 a.badge-success:hover, a.badge-success:focus {
@@ -9063,6 +9066,16 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* My Css Starts Here*/
 
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  min-height: 100%;
+}
+
 body {
   background: var(--bg);
 }
@@ -9075,7 +9088,7 @@ body {
 #my_nav a {
   color: var(--nav-text);
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .trending_images {
@@ -9138,13 +9151,39 @@ footer a:hover {
   color: var(--nav-bg);
 }
 
-.audiomack, .youtube. .reach {
+.audiomack, .youtube .reach {
   margin: 20px;
+}
+
+.img-show {
+  width: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  width: 80%;
+}
+
+.carousel {
+  font-family: 'Bree Serif', serif;
 }
 
 @media screen and (max-width:600px) {
   .trending_images {
     width: 100%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  #posted-on {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .trending_images {
+    width: 100%;
+    object-fit: cover;
   }
 }
 
@@ -9163,5 +9202,11 @@ footer a:hover {
 @media screen and (max-width:750px) {
   .trending_images {
     width: 100%;
+  }
+}
+
+@media screen and (max-width:600px) {
+  #footer-box {
+    display: none;
   }
 }

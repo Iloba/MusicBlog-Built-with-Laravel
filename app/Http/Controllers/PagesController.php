@@ -3,12 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class PagesController extends Controller
 {
     //Class that controls the Page routing
     public function index(){
-        return view('pages.index');
+
+         //Return All the Posts
+         $posts =  Post::orderBy('created_at', 'desc')->paginate(12);
+
+         //Return Latest Posts
+         $latestposts = Post::orderBy('created_at', 'desc')->take(2)->get();
+ 
+         $allposts = [
+             'posts' => $posts,
+             'latestposts' => $latestposts
+         ];
+
+
+        return view('pages.index')->with($allposts);
     }
 
     public function music(){
@@ -25,6 +39,10 @@ class PagesController extends Controller
 
     public function ad(){
         return view('pages.ad');
+    }
+
+    public function contact(){
+        return view('pages.contact');
     }
 
 }

@@ -18,6 +18,7 @@ Route::get('/music', 'PagesController@music');
 Route::get('/sports', 'PagesController@sports');
 Route::get('/ent', 'PagesController@ent');
 Route::get('/ad', 'PagesController@ad');
+Route::get('/contact', 'PagesController@contact');
 
 Auth::routes();
 
@@ -26,6 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 //Insert Dynamic PArameters into url(you need this)
@@ -35,3 +37,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Route Resource for our posts
 Route::resource('posts','PostsController');
+
+//Route Resource for our Ads
+Route::resource('ads', 'AdsController');
